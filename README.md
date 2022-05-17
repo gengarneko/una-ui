@@ -1,5 +1,7 @@
 # Turborepo starter with pnpm
 
+Modular React UI components library makes your application simple.
+
 This is an official starter turborepo.
 
 ## What's inside?
