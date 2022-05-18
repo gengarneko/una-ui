@@ -1,4 +1,4 @@
-# Turborepo starter with pnpm
+# tux-ui
 
 Modular React UI components library makes your application simple.
 
