@@ -1,10 +1,10 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "tux-ui",
   "version": "0.0.0",
-  "private": true,
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "packages/config/*"
   ],
   "scripts": {
     "build": "turbo run build",
@@ -12,10 +12,12 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
     "changeset": "changeset",
-    "version": "changeset version",
-    "publish": "changeset publish",
-    "release": "pnpm run build && pnpm run changeset && pnpm run changeset:version && pnpm run changeset:publish"
+    "changeset:version": "changeset version",
+    "changeset:publish": "changeset publish",
+    "prepublish": "pnpm run build --scope=tsconfig && pnpm run changeset && pnpm run changeset:version",
+    "release": "pnpm prepublish && pnpm run changeset:publish --access=public"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",

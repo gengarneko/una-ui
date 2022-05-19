@@ -1,6 +1,6 @@
 {
   "name": "@tux-ui/base",
-  "version": "0.0.0",
+  "version": "0.0.8",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -18,7 +18,9 @@
     "vite": "^2.9.9",
     "vite-plugin-dts": "^1.1.1"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/my-lib.umd.js",
   "module": "./dist/my-lib.es.js",
   "exports": {
@@ -26,6 +28,9 @@
       "import": "./dist/my-lib.es.js",
       "require": "./dist/my-lib.umd.js"
     }
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "author": "GengarNeko",
   "license": "MIT"
