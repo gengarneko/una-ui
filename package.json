@@ -8,11 +8,13 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:ui-base": "pnpm --filter \"@tux-ui/base\" build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@ladle/react": "^0.15.1",
     "prettier": "latest",
     "tsup": "^5.12.8",
     "turbo": "^1.2.9"
