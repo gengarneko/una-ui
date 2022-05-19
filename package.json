@@ -8,12 +8,17 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "build:ui-base": "pnpm --filter \"@tux-ui/base\" build",
+    "build:base": "pnpm --filter \"@tux-ui/base\" build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "publish": "changeset publish",
+    "release": "pnpm run build && pnpm run changeset && pnpm run changeset:version && pnpm run changeset:publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.22.0",
     "@ladle/react": "^0.15.1",
     "prettier": "latest",
     "tsup": "^5.12.8",
