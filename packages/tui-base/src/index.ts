@@ -1,3 +1,1 @@
-export const test = () => {
-  console.log(123131);
-};
+export * from "./components/Button";

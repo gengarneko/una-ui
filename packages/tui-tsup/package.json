@@ -1,0 +1,34 @@
+{
+  "name": "@tux-ui/tsup",
+  "version": "0.0.1",
+  "description": "tsup test for tux-ui",
+  "author": "gengarneko",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs"
+  },
+  "types": "./dist/index.d.ts",
+  "keywords": [
+    "tsup"
+  ],
+  "scripts": {
+    "build-fast": "tsup",
+    "build": "pnpm run build-fast -- --dts-resolve",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm run build"
+  },
+  "devDependencies": {
+    "tsup": "^5.12.8",
+    "typescript": "4.5.4",
+    "vitest": "0.2.5"
+  }
+}
