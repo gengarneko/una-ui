@@ -1,12 +1,6 @@
 {
-  "name": "@tux-ui/tsup",
-  "version": "0.0.6",
-  "description": "tsup test for tux-ui",
-  "author": "gengarneko",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "name": "tsup-lib",
+  "version": "0.0.0",
   "files": [
     "dist"
   ],
@@ -26,17 +20,16 @@
     "test": "vitest run",
     "prepublishOnly": "pnpm run build"
   },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "devDependencies": {
-    "@ladle/react": "^0.15.1",
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "tsconfig": "*",
+    "tsconfig": "workspace:*",
     "tsup": "^5.12.8",
     "typescript": "4.5.4",
-    "vitest": "0.2.5"
-  },
-  "peerDependencies": {
-    "react": ">=16.0.0",
-    "react-dom": ">=16.0.0"
+    "vitest": "0.2.5",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0"
   }
 }

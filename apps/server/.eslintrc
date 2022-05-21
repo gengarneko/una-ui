@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "alloy",
+    "alloy/react",
+    "alloy/typescript"
+  ]
+}
