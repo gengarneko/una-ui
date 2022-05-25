@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC } from 'react';
 
 // * --------------------------------------------------------------------------- comp
 
 export const Button: FC = () => {
   return (
     <div>
-      button
+      button123123123123
       <input />
     </div>
   );
