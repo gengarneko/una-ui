@@ -20,8 +20,8 @@
     "release": "pnpm prepublish && pnpm run changeset:publish --access=public"
   },
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
@@ -43,5 +43,6 @@
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "packageManager": "pnpm@7.1.0"
+  "packageManager": "pnpm@7.1.0",
+  "auto-install-pe": true
 }

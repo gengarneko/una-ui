@@ -1,79 +1,82 @@
-# tux-ui
+# UI components
 
-Modular React UI components library makes your application simple.
+## Layout
 
-This is an official starter turborepo.
+- [ ] Aspect Ratio
+- [ ] Box
+- [ ] Center - (tailwind)
+- [ ] Container
+- [ ] Flex - (tailwind)
+- [ ] Grid - (tailwind)
+- [ ] SimpleGrid
+- [ ] Stack - (tailwind)
+- [ ] Wrap - (tailwind)
+- [ ] Divider - (border)
+- [ ] Space - (tailwind)
 
-## What's inside?
+## General
 
-This turborepo uses [pnpm](https://pnpm.io) as a packages manager. It includes the following packages/apps:
+- [ ] Button
+- [ ] ButtonGroup
+- [ ] Floating action button
+- [ ] Checkbox
+- [ ] Icon
+- [ ] Typography
+- [ ] Input
+- [ ] InputPin
+- [ ] InputNumber
+- [ ] Radio
+- [ ] Rating
+- [ ] Range
+- [ ] Select
+- [ ] Slider
+- [ ] Switch
+- [ ] Textarea
 
-### Apps and Packages
+## Data Display
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+- [ ] Avatar
+- [ ] Badge
+- [ ] Code
+- [ ] Tag
+- [ ] Icons
+- [ ] Lists
+- [ ] Table
+- [ ] Timeline
+- [ ] Tooltip
+- [ ] Kbd
+- [ ] Stat
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+## Feedback
 
-### Utilities
+- [ ] Alert
+- [ ] Backdrop
+- [ ] Dialog
+- [ ] Progress
+- [ ] ProgressCircular
+- [ ] Skeleton
+- [ ] Snackbar
+- [ ] Spinner
+- [ ] Toast
 
-This turborepo has some additional tools already setup for you:
+## Overlay
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [ ] Drawer
+- [ ] Menu
+- [ ] Modal
+- [ ] Popover
+- [ ] Tooltip
 
-## Setup
+## Navigation
 
-This repository is used in the `npx create-turbo@latest` command, and selected when choosing which package manager you wish to use with your monorepo (pnpm).
+- [ ] Breadcrumbs
+- [ ] Tabs
+- [ ] Pagination
+- [ ] Stepper
 
-### Build
+## Pro
 
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run build
-```
-
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-pnpx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-pnpx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
-- [Caching](https://turborepo.org/docs/core-concepts/caching)
-- [Remote Caching (Beta)](https://turborepo.org/docs/core-concepts/remote-caching)
-- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
-- [Configuration Options](https://turborepo.org/docs/reference/configuration)
-- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
+- [ ] Excel
+- [ ] Table
+- [ ] Form
+- [ ] Form
