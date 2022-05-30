@@ -1,7 +1,7 @@
+import { FC, useState } from 'react';
+
 export const Button = () => {
-  return (
-    <div>
-      <button>this is react component --============</button>
-    </div>
-  );
+  const [state, setState] = useState(0);
+
+  return <div>button</div>;
 };

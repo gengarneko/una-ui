@@ -1,7 +1,6 @@
 {
-  "name": "turbo-ui",
+  "name": "tui-button",
   "version": "0.0.0",
-  "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -9,7 +8,6 @@
     "dist/**"
   ],
   "scripts": {
-    "docs": "ladle serve",
     "build": "tsup src/index.ts* --format esm,cjs --dts --external react",
     "dev": "tsup src/index.ts* --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix",

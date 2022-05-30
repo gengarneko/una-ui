@@ -1,11 +1,6 @@
 {
   "name": "tux-ui",
   "version": "0.0.0",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "packages/config/*"
-  ],
   "scripts": {
     "docs": "ladle serve",
     "build": "turbo run build",
@@ -13,9 +8,6 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "changeset": "changeset",
-    "changeset:version": "changeset version",
-    "changeset:publish": "changeset publish",
     "prepublish": "pnpm run build --scope=tsconfig && pnpm run changeset && pnpm run changeset:version",
     "release": "pnpm prepublish && pnpm run changeset:publish --access=public"
   },
@@ -32,17 +24,10 @@
     "turbo": "^1.2.9",
     "eslint-config-custom": "workspace:*"
   },
-  "turbo": {
-    "pipeline": {
-      "dev": {
-        "cache": false
-      }
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gengarneko/tux-ui.git"
   },
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=14.0.0"
-  },
-  "packageManager": "pnpm@7.1.0",
-  "auto-install-pe": true
+  "author": "GengarNeko",
+  "license": "MIT"
 }

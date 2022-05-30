@@ -14,6 +14,8 @@
 - [ ] Divider - (border)
 - [ ] Space - (tailwind)
 
+to be continued
+
 ## General
 
 - [ ] Button
