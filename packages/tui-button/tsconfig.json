@@ -1,8 +1,9 @@
 {
   "extends": "tsconfig/react-library.json",
   "include": [
-    "src"
-  ],
+    "src",
+    "dom"
+, "stories"  ],
   "exclude": [
     "dist",
     "test",

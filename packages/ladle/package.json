@@ -1,0 +1,30 @@
+{
+  "name": "@tui/storybook",
+  "version": "0.16.0",
+  "repository": "git@github.com:tajo/ladle.git",
+  "author": "Vojtech Miksu <vojtech@miksu.cz>",
+  "license": "MIT",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "lib",
+    "api"
+  ],
+  "bin": {
+    "book": "./cli.js"
+  },
+  "dependencies": {
+    "commander": "^8.3.0",
+    "@ladle/react": "^0.15.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.14.0",
+    "react-dom": ">=16.14.0"
+  },
+  "devDependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
