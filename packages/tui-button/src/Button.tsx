@@ -6,10 +6,11 @@ export interface ButtonProps {}
 
 // * --------------------------------------------------------------------------- comp
 
-export const Button = (props: ButtonProps) => {
+export function Button(props: ButtonProps) {
   useEffect(() => {
+    console.log(props);
     console.log(123123132);
-  }, []);
+  }, [props]);
 
-  return <button>123123123</button>;
-};
+  return <button type="button">123123123</button>;
+}
