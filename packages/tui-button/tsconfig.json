@@ -1,9 +1,10 @@
 {
-  "extends": "tsconfig/react-library.json",
+  "extends": "@tui/tsconfig/react-library.json",
   "include": [
     "src",
-    "dom"
-, "stories"  ],
+    "dom",
+    "stories"
+  ],
   "exclude": [
     "dist",
     "test",

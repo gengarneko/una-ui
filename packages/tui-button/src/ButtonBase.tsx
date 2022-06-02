@@ -1,5 +1,9 @@
+// * --------------------------------------------------------------------------- inter
+
+export interface ButtonBaseProps {}
+
 // * --------------------------------------------------------------------------- comp
 
-export const ButtonBase = () => {
-  return <button />;
-};
+export function ButtonBase(props: ButtonBaseProps) {
+  return <button type="button">{props}</button>;
+}
