@@ -9,7 +9,6 @@
     "dist/**"
   ],
   "scripts": {
-    "docs": "book serve",
     "build": "tsup src/index.ts* --format esm,cjs --dts --external react",
     "dev": "tsup src/index.ts* --format esm,cjs --watch --dts --external react",
     "lint": "TIMING=1 eslint src/**/*.ts* --fix",
@@ -18,8 +17,7 @@
   "devDependencies": {
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
-    "@tui/storybook": "workspace:*",
-    "tsconfig": "workspace:*",
+    "@tui/tsconfig": "workspace:*",
     "tsup": "^6.0.1",
     "typescript": "^4.5.2"
   },

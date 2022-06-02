@@ -20,7 +20,7 @@ importers:
       '@changesets/cli': 2.22.0
       '@ladle/react': 0.15.1_ef5jwxihqo6n7gxfmzogljlgcm
       eslint: 8.16.0
-      eslint-config-custom: link:packages/config/eslint
+      eslint-config-custom: link:tools/config-eslint
       husky: 8.0.1
       prettier: 2.6.2
       turbo: 1.2.9
@@ -44,20 +44,39 @@ importers:
       ts-node: 10.7.0_ihi2kx3po6rqbrzdqgpcfvwinm
       typescript: 4.6.4
 
-  packages/config/eslint:
+  packages/tui-button:
     specifiers:
-      eslint-config-next: ^12.0.8
-      eslint-config-prettier: ^8.3.0
-      eslint-plugin-react: 7.28.0
-    dependencies:
-      eslint-config-next: 12.1.6
-      eslint-config-prettier: 8.5.0
-      eslint-plugin-react: 7.28.0
+      '@tui/storybook': workspace:*
+      '@tui/tsconfig': workspace:*
+      '@types/node': ^17.0.35
+      '@types/react': ^17.0.37
+      '@types/react-dom': ^17.0.11
+      tsup: ^6.0.1
+      typescript: ^4.5.2
+    devDependencies:
+      '@tui/storybook': link:../../tools/cli-storybook
+      '@tui/tsconfig': link:../../tools/config-tsconfig
+      '@types/node': 17.0.35
+      '@types/react': 17.0.45
+      '@types/react-dom': 17.0.17
+      tsup: 6.0.1_typescript@4.6.4
+      typescript: 4.6.4
 
-  packages/config/tsconfig:
-    specifiers: {}
+  packages/turbo-ui:
+    specifiers:
+      '@tui/tsconfig': workspace:*
+      '@types/react': ^17.0.37
+      '@types/react-dom': ^17.0.11
+      tsup: ^6.0.1
+      typescript: ^4.5.2
+    devDependencies:
+      '@tui/tsconfig': link:../../tools/config-tsconfig
+      '@types/react': 17.0.45
+      '@types/react-dom': 17.0.17
+      tsup: 6.0.1_typescript@4.6.4
+      typescript: 4.6.4
 
-  packages/ladle:
+  tools/cli-storybook:
     specifiers:
       '@ladle/react': ^0.15.1
       commander: ^8.3.0
@@ -70,39 +89,18 @@ importers:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
 
-  packages/tui-button:
+  tools/config-eslint:
     specifiers:
-      '@tui/storybook': workspace:*
-      '@types/node': ^17.0.35
-      '@types/react': ^17.0.37
-      '@types/react-dom': ^17.0.11
-      tsconfig: workspace:*
-      tsup: ^6.0.1
-      typescript: ^4.5.2
-    devDependencies:
-      '@tui/storybook': link:../ladle
-      '@types/node': 17.0.35
-      '@types/react': 17.0.45
-      '@types/react-dom': 17.0.17
-      tsconfig: link:../config/tsconfig
-      tsup: 6.0.1_typescript@4.6.4
-      typescript: 4.6.4
+      eslint-config-next: ^12.0.8
+      eslint-config-prettier: ^8.3.0
+      eslint-plugin-react: 7.28.0
+    dependencies:
+      eslint-config-next: 12.1.6
+      eslint-config-prettier: 8.5.0
+      eslint-plugin-react: 7.28.0
 
-  packages/turbo-ui:
-    specifiers:
-      '@tui/storybook': workspace:*
-      '@types/react': ^17.0.37
-      '@types/react-dom': ^17.0.11
-      tsconfig: workspace:*
-      tsup: ^6.0.1
-      typescript: ^4.5.2
-    devDependencies:
-      '@tui/storybook': link:../ladle
-      '@types/react': 17.0.45
-      '@types/react-dom': 17.0.17
-      tsconfig: link:../config/tsconfig
-      tsup: 6.0.1_typescript@4.6.4
-      typescript: 4.6.4
+  tools/config-tsconfig:
+    specifiers: {}
 
 packages:
 
@@ -3368,7 +3366,7 @@ packages:
       - supports-color
 
   /find-up/2.1.0:
-    resolution: {integrity: sha1-RdG35QbHF93UgndaK3eSCjwMV6c=}
+    resolution: {integrity: sha512-NWzkk0jSJtTt08+FBFMvXoeZnOJD+jTtsRmBYbAIzJdX6l7dLgR7CTubCM5/eDdPUBvLCeVasP1brfVR/9/EZQ==}
     engines: {node: '>=4'}
     dependencies:
       locate-path: 2.0.0
@@ -3449,7 +3447,7 @@ packages:
     dev: true
 
   /fs.realpath/1.0.0:
-    resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
+    resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
   /fsevents/2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
@@ -3766,7 +3764,7 @@ packages:
     dev: true
 
   /inflight/1.0.6:
-    resolution: {integrity: sha1-Sb1jMdfQLQwJvJEKEHW6gWW1bfk=}
+    resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
@@ -4113,7 +4111,7 @@ packages:
     dev: false
 
   /language-tags/1.0.5:
-    resolution: {integrity: sha1-0yHbxNowuovzAk4ED6XBRmH5GTo=}
+    resolution: {integrity: sha512-qJhlO9cGXi6hBGKoxEG/sKZDAHD5Hnu9Hs4WbOY3pCWXDhw0N8x1NenNzm2EnNLkLkk7J2SdxAkDSbb6ftT+UQ==}
     dependencies:
       language-subtag-registry: 0.3.21
     dev: false
@@ -4158,7 +4156,7 @@ packages:
     dev: true
 
   /locate-path/2.0.0:
-    resolution: {integrity: sha1-K1aLJl7slExtnA3pw9u7ygNUzY4=}
+    resolution: {integrity: sha512-NCI2kiDkyR7VeEKm27Kda/iQHyKJe1Bu0FlTbYp3CqJu+9IFe9bLyAjMxf5ZDDbEg+iMPzB5zYyUTSm8wVTKmA==}
     engines: {node: '>=4'}
     dependencies:
       p-locate: 2.0.0
@@ -4491,7 +4489,7 @@ packages:
     dev: true
 
   /object-assign/4.1.1:
-    resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
+    resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
 
   /object-inspect/1.12.0:
@@ -4551,7 +4549,7 @@ packages:
       ee-first: 1.1.1
 
   /once/1.4.0:
-    resolution: {integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=}
+    resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
     dependencies:
       wrappy: 1.0.2
 
@@ -4644,7 +4642,7 @@ packages:
     dev: true
 
   /p-locate/2.0.0:
-    resolution: {integrity: sha1-IKAQOyIqcMj9OcwuWAaA893l7EM=}
+    resolution: {integrity: sha512-nQja7m7gSKuewoVRen45CtVfODR3crN3goVQ0DDZ9N3yHxgpkuBhZqsaiotSQRrADUrne346peY7kT3TSACykg==}
     engines: {node: '>=4'}
     dependencies:
       p-limit: 1.3.0
@@ -4670,7 +4668,7 @@ packages:
     dev: true
 
   /p-try/1.0.0:
-    resolution: {integrity: sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M=}
+    resolution: {integrity: sha512-U1etNYuMJoIz3ZXSrrySFjsXQTWOx2/jdi86L+2pRvph/qMKL6sbcCYdH23fqsbm8TH2Gn0OybpT4eSFlCVHww==}
     engines: {node: '>=4'}
     dev: false
 
@@ -4711,7 +4709,7 @@ packages:
     engines: {node: '>= 0.8'}
 
   /path-exists/3.0.0:
-    resolution: {integrity: sha1-zg6+ql94yxiSXqfYENe1mwEP1RU=}
+    resolution: {integrity: sha512-bpC7GYwiDYQ4wYLe+FA8lhRjhQCMcQGuSgGGqDkg/QerRWw9CmGRT0iSOVRSZJ29NMLZgIzqaljJ63oaL4NIJQ==}
     engines: {node: '>=4'}
     dev: false
 
@@ -4721,7 +4719,7 @@ packages:
     dev: true
 
   /path-is-absolute/1.0.1:
-    resolution: {integrity: sha1-F0uSaHNVNP+8es5r9TpanhtcX18=}
+    resolution: {integrity: sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==}
     engines: {node: '>=0.10.0'}
 
   /path-key/3.1.1:
