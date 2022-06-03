@@ -2,6 +2,11 @@
 
 TodoList
 
+- [x] bundle
+- [ ] docs
+- [ ] style
+- [ ] test
+
 ## Layout
 
 - [ ] Aspect Ratio

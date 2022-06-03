@@ -19,7 +19,9 @@ program
   .option('--open [string]', 'open browser, e.g. chrome, firefox, safari. Set none to disable')
   .option('--config [string]', 'folder where config is located, default .ladle')
   .action(async (params) => {
-    await serve({ ...params, serve: params });
+    const customParams = { stories: 'stories/**/*.stories.{js,jsx,ts,tsx}' };
+    const serveParams = { ...customParams, serve: customParams };
+    await serve(serveParams);
   });
 program
   .command('build')

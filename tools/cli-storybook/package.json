@@ -13,7 +13,7 @@
     "api"
   ],
   "bin": {
-    "book": "./cli.js"
+    "storybook": "./cli.js"
   },
   "dependencies": {
     "commander": "^8.3.0",

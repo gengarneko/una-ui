@@ -2,6 +2,6 @@ import { Button } from '../src';
 
 // * --------------------------------------------------------------------------- comp
 
-export const TuiButton = () => {
+export function TuiButton() {
   return <Button />;
-};
+}

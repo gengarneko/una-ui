@@ -12,5 +12,9 @@ export function Button(props: ButtonProps) {
     console.log(123123132);
   }, [props]);
 
-  return <button type="button">123123123</button>;
+  return (
+    <button type="button" style={{ border: '1px solid #eee' }}>
+      123123123
+    </button>
+  );
 }
