@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { tw } from 'twind/css';
 
 // * --------------------------------------------------------------------------- inter
 
@@ -13,8 +14,8 @@ export function Button(props: ButtonProps) {
   }, [props]);
 
   return (
-    <button type="button" style={{ border: '1px solid #eee' }}>
-      123123123
+    <button type="button" className={tw`flex text-[#eee]`} style={{ border: '1px solid #eee' }}>
+      twind button
     </button>
   );
 }

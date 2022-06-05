@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "tsup": "^6.0.1",
+    "twind": "^0.16.17",
     "unocss": "^0.37.2"
   },
   "devDependencies": {
