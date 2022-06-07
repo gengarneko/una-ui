@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "tsup": "^6.0.1",
-    "unocss": "^0.37.2"
+    "twind": "^0.16.17"
   },
   "devDependencies": {
     "@tui/storybook": "workspace:*",
