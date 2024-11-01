@@ -1,6 +1,6 @@
 import { ExternalLinkIcon } from '@radix-ui/react-icons'
 
-import { Button } from '../primitives/button'
+import { Button } from '../components/button'
 
 /**
  * This component is used inside storybook mdx files to render a button that links to the Radix docs of the primitive.
