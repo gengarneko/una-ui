@@ -1,0 +1,13 @@
+{
+  "name": "@repo/assets",
+  "version": "0.4.3",
+  "private": true,
+  "description": "OrbitKit's assets package",
+  "license": "MIT",
+  "author": "OrbitKit",
+  "files": [
+    "**/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
