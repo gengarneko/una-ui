@@ -46,10 +46,10 @@ const cli = meow(
 );
 
 // fgh(cli.flags);
-fgh(({
+fgh({
   commitsPerDay: "1,5", // 每天1-5次提交
   workdaysOnly: true,   // 仅工作日提交
   startDate: "2023-01-01",
   endDate: "2024-09-31",
   repoPath: projectRoot // una-ui 仓库的实际路径
-}));
+});

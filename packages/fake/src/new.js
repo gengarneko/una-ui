@@ -119,84 +119,84 @@ async function createCommit(date, template, repoPath) {
       .filter(file => /\.(ts|tsx|js|jsx)$/.test(file))
       .map(file => path.join(folderPath, file));
 
-  // 检查是否是文件夹并查找同名文件
-  if (existsSync(componentPath) && fs.statSync(componentPath).isDirectory()) {
-    // 尝试查找同名文件（支持多种扩展名）
-    const possibleFiles = [
-      path.join(componentPath, `${fileName}.tsx`),
-      path.join(componentPath, `${fileName}.ts`),
-      path.join(componentPath, `${fileName}.jsx`),
-      path.join(componentPath, `${fileName}.js`),
-      path.join(componentPath, `index.tsx`),
-      path.join(componentPath, `index.ts`),
-      path.join(componentPath, `index.jsx`),
-      path.join(componentPath, `index.js`)
-    ];
+    // 检查是否是文件夹并查找同名文件
+    if (existsSync(folderPath) && fs.statSync(folderPath).isDirectory()) {
+      // 尝试查找同名文件（支持多种扩展名）
+      const possibleFiles = [
+        path.join(folderPath, `${fileName}.tsx`),
+        path.join(folderPath, `${fileName}.ts`),
+        path.join(folderPath, `${fileName}.mdx`),
+        path.join(folderPath, `${fileName}.stories.tsx`),
+        path.join(folderPath, `index.tsx`),
+        path.join(folderPath, `index.ts`),
+      ];
 
-    console.log('尝试查找以下文件:');  // 调试日志
-    possibleFiles.forEach(file => console.log(`- ${file}`));
+      // console.log('尝试查找以下文件:');  // 调试日志
+      // possibleFiles.forEach(file => console.log(`- ${file}`));
 
-    const targetFile = possibleFiles.find(file => existsSync(file));
+      const targetFile = possibleFiles.find(file => existsSync(file));
 
-    if (targetFile) {
-      console.log(`找到文件: ${targetFile}`);  // 调试日志
+      if (targetFile) {
+        // console.log(`找到文件: ${targetFile}`);  // 调试日志
 
-      // 读取现有文件内容
-      const currentContent = fs.readFileSync(targetFile, 'utf-8');
+        // 读取现有文件内容
+        const currentContent = fs.readFileSync(targetFile, 'utf-8');
 
-      // 添加一些随机的注释或小改动
-      const updatedContent = currentContent +
-        `\n// Updated at ${date}\n` +
-        `// Random change for ${type}(${scope})\n`;
+        // 添加一些随机的注释或小改动
+        const updatedContent = currentContent +
+          `\n// Updated at ${date}\n` +
+          `// Random change for ${type}(${scope})\n`;
 
-      // 写入修改后的内容
-      writeFileSync(targetFile, updatedContent);
+        // 写入修改后的内容
+        writeFileSync(targetFile, updatedContent);
 
-      // 执行 git 命令
-      await execAsync(`git add "${targetFile}"`);
+        // 执行 git 命令
+        await execAsync(`git add "${targetFile}"`);
+      } else {
+        console.log(`没有找到文件: ${targetFile}`);  // 调试日志
+        // 如果文件夹中没有可修改的文件，创建一个新文件
+        const newFile = path.join(folderPath, 'index.ts');
+        const fileContent = `// ${fileName} - Created at ${date}\n` +
+          `// This is a sample file for ${type}(${scope})\n` +
+          `export const ${fileName} = {\n` +
+          `  name: '${fileName}',\n` +
+          `  created: '${date}'\n` +
+          `};\n`;
+
+        writeFileSync(newFile, fileContent);
+        await execAsync(`git add "${newFile}"`);
+      }
     } else {
-      // 如果文件夹中没有可修改的文件，创建一个新文件
-      const newFile = path.join(folderPath, 'index.ts');
-      const fileContent = `// ${fileName} - Created at ${date}\n` +
-        `// This is a sample file for ${type}(${scope})\n` +
-        `export const ${fileName} = {\n` +
-        `  name: '${fileName}',\n` +
-        `  created: '${date}'\n` +
-        `};\n`;
+      // 如果是文件，直接修改
+      const filePath = `${folderPath}.tsx`;
+      if (existsSync(filePath)) {
+        const currentContent = fs.readFileSync(filePath, 'utf-8');
+        const updatedContent = currentContent +
+          `\n// Updated at ${date}\n` +
+          `// Random change for ${type}(${scope})\n`;
 
-      writeFileSync(newFile, fileContent);
-      await execAsync(`git add "${newFile}"`);
+        writeFileSync(filePath, updatedContent);
+      } else {
+        // 如果文件不存在，创建新文件
+        const fileContent = `// ${fileName} - Created at ${date}\n` +
+          `// This is a sample file for ${type}(${scope})\n` +
+          `export const ${fileName} = {\n` +
+          `  name: '${fileName}',\n` +
+          `  created: '${date}'\n` +
+          `};\n`;
+
+        writeFileSync(filePath, fileContent);
+      }
+      await execAsync(`git add "${filePath}"`);
     }
-  } else {
-    // 如果是文件，直接修改
-    const filePath = `${folderPath}.tsx`;
-    if (existsSync(filePath)) {
-      const currentContent = fs.readFileSync(filePath, 'utf-8');
-      const updatedContent = currentContent +
-        `\n// Updated at ${date}\n` +
-        `// Random change for ${type}(${scope})\n`;
 
-      writeFileSync(filePath, updatedContent);
-    } else {
-      // 如果文件不存在，创建新文件
-      const fileContent = `// ${fileName} - Created at ${date}\n` +
-        `// This is a sample file for ${type}(${scope})\n` +
-        `export const ${fileName} = {\n` +
-        `  name: '${fileName}',\n` +
-        `  created: '${date}'\n` +
-        `};\n`;
+    // 生成提交信息
+    const message = template.messages[Math.floor(Math.random() * template.messages.length)]
+      .replace('{name}', fileName);
 
-      writeFileSync(filePath, fileContent);
-    }
-    await execAsync(`git add "${filePath}"`);
+    // 执行 git commit 命令
+    await execAsync(`git commit --quiet --date "${date}" -m "${type}(${scope}): ${message}"`);
   }
-
-  // 生成提交信息
-  const message = template.messages[Math.floor(Math.random() * template.messages.length)]
-    .replace('{name}', fileName);
-
-  // 执行 git commit 命令
-  await execAsync(`git commit --quiet --date "${date}" -m "${type}(${scope}): ${message}"`);
 }
 
 module.exports = function({ commitsPerDay, workdaysOnly, startDate, endDate, repoPath }) {
@@ -252,7 +252,7 @@ module.exports = function({ commitsPerDay, workdaysOnly, startDate, endDate, rep
           year: "numeric"
         }).format(date);
 
-        spinner.text = `正在生成提交记录... (${dateFormatted})\n`;
+        // spinner.text = `正在生成提交记录... (${dateFormatted})\n`;
 
         const template = COMMIT_TEMPLATES[Math.floor(Math.random() * COMMIT_TEMPLATES.length)];
         await createCommit(date, template, repoPath);
