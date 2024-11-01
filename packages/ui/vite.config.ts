@@ -1,4 +1,4 @@
-import { buildConfig, mergeConfig, reactConfig } from '@repo/vite'
+import { buildConfig, mergeConfig, reactConfig } from '@una/vite'
 
 import pkg from './package.json'
 

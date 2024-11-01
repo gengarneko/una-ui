@@ -1,6 +1,6 @@
-import '@repo/assets/fonts/stylesheet.css'
+import '@una/assets/fonts/stylesheet.css'
 import './globals.css'
 
-import preview from '@repo/storybook/preview'
+import preview from '@una/storybook/preview'
 
 export default preview

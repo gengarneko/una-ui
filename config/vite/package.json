@@ -1,5 +1,5 @@
 {
-  "name": "@repo/vite",
+  "name": "@una/vite",
   "version": "0.4.3",
   "private": true,
   "description": "Vite presets for the workspace",
@@ -26,8 +26,8 @@
     "vite-tsconfig-paths": "^5.0.1"
   },
   "devDependencies": {
-    "@repo/eslint": "workspace:^",
-    "@repo/tsconfig": "workspace:^",
+    "@una/eslint": "workspace:^",
+    "@una/tsconfig": "workspace:^",
     "globby": "^14.0.2",
     "rollup-plugin-preserve-directives": "^0.4.0",
     "vite-plugin-dts": "^4.1.0",

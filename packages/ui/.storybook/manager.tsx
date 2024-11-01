@@ -1,5 +1,5 @@
-import '@repo/assets/fonts/stylesheet.css'
+import '@una/assets/fonts/stylesheet.css'
 
-import { registerAddons } from '@repo/storybook/manager'
+import { registerAddons } from '@una/storybook/manager'
 
 registerAddons()

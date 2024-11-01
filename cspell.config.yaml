@@ -24,6 +24,7 @@ words:
   - bvaughn
   - Byrom
   - callees
+  - Cantarell
   - cjsx
   - classname
   - clsx
@@ -47,7 +48,9 @@ words:
   - Embla
   - esbenp
   - eslintcache
+  - Fira
   - gengarneko
+  - Grotesk
   - hookform
   - ianvs
   - ixahmedxi
@@ -56,6 +59,7 @@ words:
   - jspm
   - kohler
   - lockb
+  - logomark
   - lucide
   - Malyavko
   - microbundle
@@ -67,9 +71,11 @@ words:
   - mtsx
   - neonctl
   - neondatabase
+  - Neue
   - nextjs
   - nuxt
   - nzst
+  - oklch
   - onwarn
   - optimisations
   - orbitkit
@@ -82,6 +88,8 @@ words:
   - posthog
   - quickstart
   - Ratelimit
+  - Roboto
+  - Segoe
   - shadcn
   - sslmode
   - starterkit
@@ -113,10 +121,9 @@ words:
   - unkey
   - uploadthing
   - vaul
+  - vercel
   - viewports
   - vuepress
-  - vercel
   - WITA
   - wscript
   - yoav
-  - logomark

@@ -1,5 +1,5 @@
 {
-  "extends": ["@repo/tsconfig/react.json"],
+  "extends": ["@una/tsconfig/react.json"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

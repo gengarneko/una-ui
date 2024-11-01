@@ -1,0 +1,74 @@
+import { Canvas, Controls, Meta, Source } from '@storybook/blocks'
+
+import * as AnchorStories from './anchor.stories'
+
+<Meta of={AnchorStories} />
+
+# Anchor
+
+一个增强版的链接组件，支持箭头指示、下划线效果和网站图标等特性。
+
+## 预览
+
+<Canvas of={AnchorStories.Default} />
+
+<Controls />
+
+## 使用方法
+
+export const importCode = `import { Anchor } from "@una/ui/anchor";`
+
+export const usageCode = `// 基础用法
+<Anchor href="https://example.com">
+  基础链接
+</Anchor>
+
+// 带箭头的链接
+
+<Anchor href='https://example.com' arrow='right'>
+  带箭头的链接
+</Anchor>
+
+// 组合使用
+
+<Anchor href='https://example.com' arrow='right' underline favicon>
+  完整功能链接
+</Anchor>
+`
+
+<Source code={importCode} language='ts' dark />
+<Source code={usageCode} language='tsx' dark />
+
+## 特性
+
+- **箭头指示**: 支持在链接左侧或右侧显示箭头
+- **下划线效果**: 可选的悬停下划线动画
+- **网站图标**: 可显示目标网站的 favicon
+- **低调模式**: 提供更柔和的视觉效果
+- **完全可访问**: 符合 WAI-ARIA 规范
+
+## 变体示例
+
+### 带右箭头
+
+<Canvas of={AnchorStories.WithRightArrow} />
+
+### 带下划线
+
+<Canvas of={AnchorStories.WithUnderline} />
+
+### 带网站图标
+
+<Canvas of={AnchorStories.WithFavicon} />
+
+export const propsCode = `interface AnchorProps {
+  arrow?: 'left' | 'right'
+  underline?: boolean
+  favicon?: boolean
+  discreet?: boolean
+  href: string
+  children: React.ReactNode
+  className?: string
+}`
+
+<Source code={propsCode} language='tsx' dark />

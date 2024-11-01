@@ -1,5 +1,5 @@
 {
-  "name": "@repo/utils",
+  "name": "@una/utils",
   "version": "0.4.3",
   "private": true,
   "description": "Common utilities for OrbitKit",
@@ -26,7 +26,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@repo/eslint": "workspace:^",
-    "@repo/tsconfig": "workspace:^"
+    "@una/eslint": "workspace:^",
+    "@una/tsconfig": "workspace:^"
   }
 }

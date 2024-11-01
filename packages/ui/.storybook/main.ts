@@ -1,3 +1,3 @@
-import reactConfig from '@repo/storybook/configs/react-vite'
+import reactConfig from '@una/storybook/configs/react-vite'
 
 export default reactConfig

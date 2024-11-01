@@ -33,7 +33,7 @@ const config = {
       strictMode: true,
     },
   },
-  staticDirs: [getAbsolutePath('@repo/assets')],
+  staticDirs: [getAbsolutePath('@una/assets')],
   docs: {
     autodocs: 'tag',
   },
