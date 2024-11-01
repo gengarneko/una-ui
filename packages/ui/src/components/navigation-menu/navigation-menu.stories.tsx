@@ -43,38 +43,33 @@ ListItem.displayName = 'ListItem'
 const components: { title: string; href: string; description: string }[] = [
   {
     title: 'Alert Dialog',
-    href: '/docs/primitives/alert-dialog',
-    description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
+    href: '/docs/components/alert-dialog',
+    description: '一个中断用户并期望响应的重要内容的模态对话框。',
   },
   {
     title: 'Hover Card',
-    href: '/docs/primitives/hover-card',
-    description:
-      'For sighted users to preview content available behind a link.',
+    href: '/docs/components/hover-card',
+    description: '为视力正常的用户预览链接后面的内容。',
   },
   {
     title: 'Progress',
-    href: '/docs/primitives/progress',
-    description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
+    href: '/docs/components/progress',
+    description: '显示一个指示器，显示任务完成的进度，通常显示为进度条。',
   },
   {
     title: 'Scroll-area',
-    href: '/docs/primitives/scroll-area',
-    description: 'Visually or semantically separates content.',
+    href: '/docs/components/scroll-area',
+    description: '视觉或语义上分离内容。',
   },
   {
     title: 'Tabs',
-    href: '/docs/primitives/tabs',
-    description:
-      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
+    href: '/docs/components/tabs',
+    description: '一组分层的节内容，一次显示一个。',
   },
   {
     title: 'Tooltip',
-    href: '/docs/primitives/tooltip',
-    description:
-      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
+    href: '/docs/components/tooltip',
+    description: '一个弹出窗口，当元素接收键盘焦点或鼠标悬停时显示相关信息。',
   },
 ]
 
@@ -85,7 +80,7 @@ const meta: Meta<typeof NavigationMenu> = {
       <NavigationMenu {...args}>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+            <NavigationMenuTrigger>开始</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className='grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]'>
                 <li className='row-span-3'>
@@ -98,26 +93,25 @@ const meta: Meta<typeof NavigationMenu> = {
                         shadcn/ui
                       </div>
                       <p className='text-sm leading-tight text-muted-foreground'>
-                        Beautifully designed components built with Radix UI and
-                        Tailwind CSS.
+                        设计精美的组件，使用 Radix UI 和 Tailwind CSS 构建。
                       </p>
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href='/docs' title='Introduction'>
-                  Re-usable components built using Radix UI and Tailwind CSS.
+                <ListItem href='/docs' title='介绍'>
+                  可重用的组件，使用 Radix UI 和 Tailwind CSS 构建。
                 </ListItem>
-                <ListItem href='/docs/installation' title='Installation'>
-                  How to install dependencies and structure your app.
+                <ListItem href='/docs/installation' title='安装'>
+                  如何安装依赖并构建你的应用。
                 </ListItem>
-                <ListItem href='/docs/primitives/typography' title='Typography'>
-                  Styles for headings, paragraphs, lists...etc
+                <ListItem href='/docs/components/typography' title='排版'>
+                  样式用于标题、段落、列表等。
                 </ListItem>
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+            <NavigationMenuTrigger>组件</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] '>
                 {components.map((component) => (
@@ -135,7 +129,7 @@ const meta: Meta<typeof NavigationMenu> = {
           <NavigationMenuItem>
             <a href='/docs'>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                Documentation
+                文档
               </NavigationMenuLink>
             </a>
           </NavigationMenuItem>

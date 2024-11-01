@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Button } from '@/primitives/button'
+import { Button } from '@/components/button'
 
 import {
   Drawer,
@@ -17,16 +17,16 @@ const meta: Meta<typeof Drawer> = {
   component: Drawer,
   render: (args) => (
     <Drawer {...args}>
-      <DrawerTrigger>Open</DrawerTrigger>
+      <DrawerTrigger>打开</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-          <DrawerDescription>This action cannot be undone.</DrawerDescription>
+          <DrawerTitle>你确定吗？</DrawerTitle>
+          <DrawerDescription>此操作无法撤消。</DrawerDescription>
         </DrawerHeader>
         <DrawerFooter>
-          <Button>Submit</Button>
+          <Button>提交</Button>
           <DrawerClose asChild>
-            <Button variant='outline'>Cancel</Button>
+            <Button variant='outline'>取消</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>

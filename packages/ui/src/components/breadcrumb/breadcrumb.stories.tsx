@@ -6,7 +6,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/primitives/dropdown-menu'
+} from '@/components/dropdown-menu'
 
 import {
   Breadcrumb,
@@ -43,7 +43,7 @@ const meta: Meta<typeof Breadcrumb> = {
           </>
         ))}
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>面包屑</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
@@ -71,7 +71,7 @@ export const CustomSeparator: Story = {
           </>
         ))}
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>面包屑</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
@@ -83,7 +83,7 @@ export const Dropdown: Story = {
     <Breadcrumb {...args}>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href='/'>Home</BreadcrumbLink>
+          <BreadcrumbLink href='/'>首页</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
           <SlashIcon />
@@ -91,12 +91,12 @@ export const Dropdown: Story = {
         <BreadcrumbItem>
           <DropdownMenu>
             <DropdownMenuTrigger className='flex items-center gap-1'>
-              Components
+              组件
               <ChevronDownIcon />
             </DropdownMenuTrigger>
             <DropdownMenuContent align='start'>
-              <DropdownMenuItem>Documentation</DropdownMenuItem>
-              <DropdownMenuItem>Themes</DropdownMenuItem>
+              <DropdownMenuItem>文档</DropdownMenuItem>
+              <DropdownMenuItem>主题</DropdownMenuItem>
               <DropdownMenuItem>GitHub</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -105,7 +105,7 @@ export const Dropdown: Story = {
           <SlashIcon />
         </BreadcrumbSeparator>
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>面包屑</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
@@ -129,7 +129,7 @@ export const Collapsed: Story = {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+          <BreadcrumbPage>面包屑</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

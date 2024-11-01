@@ -12,7 +12,7 @@ const meta: Meta<typeof TooltipContent> = {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Button variant='outline'>Hover</Button>
+          <Button variant='outline'>悬停</Button>
         </TooltipTrigger>
         <TooltipContent {...args} />
       </Tooltip>

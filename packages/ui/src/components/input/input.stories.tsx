@@ -24,7 +24,7 @@ export const File: Story = {
   },
   render: (args) => (
     <div className='grid w-full max-w-sm items-center gap-1.5'>
-      <Label htmlFor='picture'>Picture</Label>
+      <Label htmlFor='picture'>图片</Label>
       <Input {...args} />
     </div>
   ),
@@ -43,7 +43,7 @@ export const WithLabel: Story = {
   },
   render: (args) => (
     <div className='grid w-full max-w-sm items-center gap-1.5'>
-      <Label htmlFor='email'>Email address</Label>
+      <Label htmlFor='email'>邮箱地址</Label>
       <Input {...args} />
     </div>
   ),
@@ -53,7 +53,7 @@ export const WithButton: Story = {
   render: (args) => (
     <div className='flex w-full max-w-sm items-center space-x-2'>
       <Input {...args} />
-      <Button type='submit'>Subscribe</Button>
+      <Button type='submit'>订阅</Button>
     </div>
   ),
 }

@@ -7,6 +7,6 @@ drizzle/
 
 .changeset/
 
-packages/ui/src/primitives/form/form.mdx
-packages/ui/src/primitives/toast/toast.mdx
-packages/ui/src/primitives/carousel/carousel.mdx
+packages/ui/src/components/form/form.mdx
+packages/ui/src/components/toast/toast.mdx
+packages/ui/src/components/carousel/carousel.mdx

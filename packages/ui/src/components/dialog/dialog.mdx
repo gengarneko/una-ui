@@ -9,7 +9,7 @@ import * as DialogStories from './dialog.stories'
 
 # Dialog
 
-A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+一个覆盖在主窗口或另一个对话窗口上的窗口，渲染下面的内容。
 
 ## Preview
 
@@ -27,13 +27,12 @@ export const importCode = `import {
 } from "@una/ui/dialog";`
 
 export const usageCode = `<Dialog>
-  <DialogTrigger>Open</DialogTrigger>
+  <DialogTrigger>打开</DialogTrigger>
   <DialogContent>
     <DialogHeader>
-      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogTitle>你确定吗？</DialogTitle>
       <DialogDescription>
-        This action cannot be undone. This will permanently delete your account
-        and remove your data from our servers.
+        此操作无法撤消。这将永久删除您的帐户并从我们的服务器中删除您的数据。
       </DialogDescription>
     </DialogHeader>
   </DialogContent>

@@ -67,7 +67,7 @@ export const WithIcon: Story = {
   args: {
     children: (
       <>
-        <EnvelopeOpenIcon className='mr-2 size-4' /> Login with Email
+        <EnvelopeOpenIcon className='mr-2 size-4' /> 使用邮箱登录
       </>
     ),
   },
@@ -83,7 +83,7 @@ export const Loading: Story = {
     children: (
       <>
         <ReloadIcon className='mr-2 size-4 animate-spin' />
-        Please wait
+        请稍候
       </>
     ),
   },

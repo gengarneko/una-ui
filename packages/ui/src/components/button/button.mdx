@@ -6,7 +6,7 @@ import * as ButtonStories from './button.stories'
 
 # Button
 
-Displays a button or a component that looks like a button.
+展示一个按钮或看起来像按钮的组件。
 
 ## Preview
 
@@ -25,7 +25,7 @@ export const usageCode = `<Button variant="outline">Button</Button>`
 
 ## Helper
 
-You can use the `buttonVariants` helper to create a link that looks like a button.
+你可以使用 `buttonVariants` 助手来创建一个看起来像按钮的链接。
 
 export const linkImportCode = `import { buttonVariants } from "@una/ui/button";`
 
@@ -35,7 +35,7 @@ export const linkUsageCode = `<Link className={buttonVariants({ variant: "outlin
 
 <Source code={linkUsageCode} language='tsx' dark />
 
-Alternatively, you can set the `asChild` parameter and nest the link component.
+你也可以设置 `asChild` 参数并嵌套链接组件。
 
 export const asChildCode = `<Button asChild>
   <Link href="/login">Login</Link>

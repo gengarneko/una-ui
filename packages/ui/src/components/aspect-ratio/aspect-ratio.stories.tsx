@@ -19,7 +19,7 @@ export const Default: Story = {
       <AspectRatio {...args} className='bg-muted'>
         <img
           src='https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80'
-          alt='By Drew Beamer'
+          alt='Attention'
           className='rounded-md object-cover'
         />
       </AspectRatio>

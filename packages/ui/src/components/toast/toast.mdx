@@ -9,7 +9,7 @@ import * as ToastStories from './toast.stories'
 
 # Toast
 
-A succinct message that is displayed temporarily.
+一个简洁的消息，短暂显示。
 
 ## Preview
 
@@ -17,7 +17,7 @@ A succinct message that is displayed temporarily.
 
 ## Usage
 
-### Add `Toaster` component to your layout
+### 将 `Toaster` 组件添加到您的布局中
 
 export const providerCode = `import { Toaster } from "@una/ui/toast";
 
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
 
 <Source code={providerCode} language='tsx' dark />
 
-### Use `toast` function from `useToast` hook
+### 使用 `toast` 函数从 `useToast` 钩子中
 
 export const importCode = `import { useToast } from "@una/ui/toast";`
 
@@ -56,7 +56,7 @@ return (
 </Button>
 ); } `;
 
-> To display multiple toasts at the same time, you can update the `TOAST_LIMIT` in `use-toast.tsx`.
+> 要同时显示多个 toast，可以更新 `use-toast.tsx` 中的 `TOAST_LIMIT`。
 
 <Source code={importCode} language='ts' dark />
 <Source code={usageCode} language='tsx' dark />
@@ -77,6 +77,6 @@ return (
 
 ### Destructive
 
-Use `toast({ variant: "destructive" })` to display a destructive toast.
+使用 `toast({ variant: "destructive" })` 显示一个破坏性 toast。
 
 <Canvas of={ToastStories.Destructive} />

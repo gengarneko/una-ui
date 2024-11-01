@@ -1,8 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Button } from '@/primitives/button'
-import { Input } from '@/primitives/input'
-import { Label } from '@/primitives/label'
+import { Button } from '@/components/button'
+import { Input } from '@/components/input'
+import { Label } from '@/components/label'
 
 import {
   Sheet,
@@ -36,32 +36,32 @@ export const Default: Story = {
   render: (args) => (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant='outline'>Open</Button>
+        <Button variant='outline'>打开</Button>
       </SheetTrigger>
       <SheetContent {...args}>
         <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
+          <SheetTitle>编辑资料</SheetTitle>
           <SheetDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
+            在这里更改您的资料。点击保存以完成。
           </SheetDescription>
         </SheetHeader>
         <div className='grid gap-4 py-4'>
           <div className='grid grid-cols-4 items-center gap-4'>
             <Label htmlFor='name' className='text-right'>
-              Name
+              姓名
             </Label>
             <Input id='name' value='Pedro Duarte' className='col-span-3' />
           </div>
           <div className='grid grid-cols-4 items-center gap-4'>
             <Label htmlFor='username' className='text-right'>
-              Username
+              用户名
             </Label>
             <Input id='username' value='@peduarte' className='col-span-3' />
           </div>
         </div>
         <SheetFooter>
           <SheetClose asChild>
-            <Button type='submit'>Save changes</Button>
+            <Button type='submit'>保存更改</Button>
           </SheetClose>
         </SheetFooter>
       </SheetContent>

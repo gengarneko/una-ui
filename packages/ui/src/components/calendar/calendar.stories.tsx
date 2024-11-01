@@ -7,8 +7,8 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { addDays, format } from 'date-fns'
 import { type DateRange } from 'react-day-picker'
 
-import { Button } from '@/primitives/button'
-import { Popover, PopoverContent, PopoverTrigger } from '@/primitives/popover'
+import { Button } from '@/components/button'
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/popover'
 import { cn } from '@/utils/cn'
 
 import { Calendar } from '.'
@@ -128,7 +128,7 @@ const WithPresetsExample = (props: ComponentProps<typeof Calendar>) => {
           )}
         >
           <CalendarIcon className='mr-2 size-4' />
-          {date ? format(date, 'PPP') : <span>Pick a date</span>}
+          {date ? format(date, 'PPP') : <span>选择一个日期</span>}
         </Button>
       </PopoverTrigger>
       <PopoverContent
@@ -141,13 +141,13 @@ const WithPresetsExample = (props: ComponentProps<typeof Calendar>) => {
           }}
         >
           <SelectTrigger>
-            <SelectValue placeholder='Select' />
+            <SelectValue placeholder='选择一个日期' />
           </SelectTrigger>
           <SelectContent position='popper'>
-            <SelectItem value='0'>Today</SelectItem>
-            <SelectItem value='1'>Tomorrow</SelectItem>
-            <SelectItem value='3'>In 3 days</SelectItem>
-            <SelectItem value='7'>In a week</SelectItem>
+            <SelectItem value='0'>今天</SelectItem>
+            <SelectItem value='1'>明天</SelectItem>
+            <SelectItem value='3'>三天后</SelectItem>
+            <SelectItem value='7'>一周后</SelectItem>
           </SelectContent>
         </Select>
         <div className='rounded-md border'>

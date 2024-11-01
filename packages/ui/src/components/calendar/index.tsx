@@ -9,7 +9,7 @@ import {
 } from '@radix-ui/react-icons'
 import { DayPicker } from 'react-day-picker'
 
-import { buttonVariants } from '@/primitives/button'
+import { buttonVariants } from '@/components/button'
 import { cn } from '@/utils/cn'
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>

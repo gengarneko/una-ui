@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Label } from '@/primitives/label'
+import { Label } from '@/components/label'
 
 import { RadioGroup, RadioGroupItem } from '.'
 
@@ -20,11 +20,11 @@ export const Default: Story = {
     <RadioGroup {...args}>
       <div className='flex items-center space-x-2'>
         <RadioGroupItem value='option-one' id='option-one' />
-        <Label htmlFor='option-one'>Option One</Label>
+        <Label htmlFor='option-one'>选项一</Label>
       </div>
       <div className='flex items-center space-x-2'>
         <RadioGroupItem value='option-two' id='option-two' />
-        <Label htmlFor='option-two'>Option Two</Label>
+        <Label htmlFor='option-two'>选项二</Label>
       </div>
     </RadioGroup>
   ),

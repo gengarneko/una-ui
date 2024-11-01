@@ -31,17 +31,17 @@ const meta: Meta<typeof Command> = {
       <Command {...args} className='rounded-lg border shadow-md'>
         <CommandInput placeholder='Type a command or search...' />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading='Suggestions'>
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
+          <CommandEmpty>没有找到结果。</CommandEmpty>
+          <CommandGroup heading='建议'>
+            <CommandItem>日历</CommandItem>
+            <CommandItem>搜索表情符号</CommandItem>
+            <CommandItem>计算器</CommandItem>
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading='Settings'>
-            <CommandItem>Profile</CommandItem>
-            <CommandItem>Billing</CommandItem>
-            <CommandItem>Settings</CommandItem>
+          <CommandGroup heading='设置'>
+            <CommandItem>个人资料</CommandItem>
+            <CommandItem>账单</CommandItem>
+            <CommandItem>设置</CommandItem>
           </CommandGroup>
         </CommandList>
       </Command>
@@ -82,8 +82,8 @@ const DialogExample = (props: ComponentProps<typeof CommandDialog>) => {
       <CommandDialog {...props} open={open} onOpenChange={setOpen}>
         <CommandInput placeholder='Type a command or search...' />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading='Suggestions'>
+          <CommandEmpty>没有找到结果。</CommandEmpty>
+          <CommandGroup heading='建议'>
             <CommandItem>
               <CalendarIcon className='mr-2 size-4' />
               <span>Calendar</span>
@@ -98,20 +98,20 @@ const DialogExample = (props: ComponentProps<typeof CommandDialog>) => {
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading='Settings'>
+          <CommandGroup heading='设置'>
             <CommandItem>
               <PersonIcon className='mr-2 size-4' />
-              <span>Profile</span>
+              <span>个人资料</span>
               <CommandShortcut>⌘P</CommandShortcut>
             </CommandItem>
             <CommandItem>
               <EnvelopeClosedIcon className='mr-2 size-4' />
-              <span>Mail</span>
+              <span>邮件</span>
               <CommandShortcut>⌘B</CommandShortcut>
             </CommandItem>
             <CommandItem>
               <GearIcon className='mr-2 size-4' />
-              <span>Settings</span>
+              <span>设置</span>
               <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>
           </CommandGroup>

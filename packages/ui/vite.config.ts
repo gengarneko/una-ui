@@ -10,7 +10,7 @@ export default mergeConfig(
    */
   buildConfig({
     lib: {
-      entry: ['./src/primitives/*/index.tsx', './src/utils/cn.ts'],
+      entry: ['./src/components/*/index.tsx', './src/utils/cn.ts'],
     },
     external: {
       externalizeDeps: Object.keys(pkg.dependencies),

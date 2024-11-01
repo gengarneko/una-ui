@@ -25,7 +25,7 @@ export const WithLabel: Story = {
   },
   render: (args) => (
     <div className='grid w-full gap-1.5'>
-      <Label htmlFor={args.id}>Your Message</Label>
+      <Label htmlFor={args.id}>您的消息</Label>
       <Textarea {...args} />
     </div>
   ),
@@ -37,11 +37,9 @@ export const WithText: Story = {
   },
   render: (args) => (
     <div className='grid w-full gap-1.5'>
-      <Label htmlFor={args.id}>Your Message</Label>
+      <Label htmlFor={args.id}>您的消息</Label>
       <Textarea {...args} />
-      <Typography variant='muted'>
-        Your message will be copied to the support team.
-      </Typography>
+      <Typography variant='muted'>您的消息将被复制到支持团队。</Typography>
     </div>
   ),
 }
@@ -50,7 +48,7 @@ export const WithButton: Story = {
   render: (args) => (
     <div className='grid w-full gap-2'>
       <Textarea {...args} />
-      <Button>Send message</Button>
+      <Button>发送消息</Button>
     </div>
   ),
 }

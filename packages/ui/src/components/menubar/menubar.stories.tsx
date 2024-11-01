@@ -15,16 +15,16 @@ const meta: Meta<typeof Menubar> = {
   render: (args) => (
     <Menubar {...args}>
       <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarTrigger>文件</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
-            New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+            新标签 <MenubarShortcut>⌘T</MenubarShortcut>
           </MenubarItem>
-          <MenubarItem>New Window</MenubarItem>
+          <MenubarItem>新窗口</MenubarItem>
           <MenubarSeparator />
-          <MenubarItem>Share</MenubarItem>
+          <MenubarItem>分享</MenubarItem>
           <MenubarSeparator />
-          <MenubarItem>Print</MenubarItem>
+          <MenubarItem>打印</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

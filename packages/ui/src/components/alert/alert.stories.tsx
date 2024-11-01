@@ -26,10 +26,8 @@ export const Default: Story = {
   render: (args) => (
     <Alert {...args}>
       <RocketIcon className='size-4' />
-      <AlertTitle>Heads up!</AlertTitle>
-      <AlertDescription>
-        You can add components to your app using the cli.
-      </AlertDescription>
+      <AlertTitle>提示</AlertTitle>
+      <AlertDescription>你可以使用 cli 添加组件和依赖。</AlertDescription>
     </Alert>
   ),
 }
@@ -41,10 +39,8 @@ export const Destructive: Story = {
   render: (args) => (
     <Alert {...args}>
       <ExclamationTriangleIcon className='size-4' />
-      <AlertTitle>Error</AlertTitle>
-      <AlertDescription>
-        Your session has expired. Please log in again.
-      </AlertDescription>
+      <AlertTitle>错误</AlertTitle>
+      <AlertDescription>你的会话已过期。请重新登录。</AlertDescription>
     </Alert>
   ),
 }

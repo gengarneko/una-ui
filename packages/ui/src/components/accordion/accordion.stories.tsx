@@ -39,20 +39,18 @@ type Story = StoryObj<typeof Accordion>
 
 const items = [
   {
-    trigger: 'Is it accessible?',
-    content: 'Yes. It adheres to the WAI-ARIA design pattern.',
+    trigger: '是否可访问？',
+    content: '是的。它遵循 WAI-ARIA 设计模式。',
     value: 'item-1',
   },
   {
-    trigger: 'Is it styled?',
-    content:
-      "Yes. It comes with default styles that matches the other components' aesthetic.",
+    trigger: '是否样式化？',
+    content: '是的。它带有默认样式，与其它组件的外观相匹配。',
     value: 'item-2',
   },
   {
-    trigger: 'Is it animated?',
-    content:
-      "Yes. It's animated by default, but you can disable it if you prefer.",
+    trigger: '是否有动画？',
+    content: '是的。它是默认动画的，但如果你愿意，可以禁用它。',
     value: 'item-3',
   },
 ]

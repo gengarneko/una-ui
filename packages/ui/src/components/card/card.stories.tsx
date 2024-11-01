@@ -1,7 +1,7 @@
 import { BellIcon, CheckIcon } from '@radix-ui/react-icons'
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Button } from '@/primitives/button'
+import { Button } from '@/components/button'
 import {
   Card,
   CardContent,
@@ -9,8 +9,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/primitives/card'
-import { Switch } from '@/primitives/switch'
+} from '@/components/card'
+import { Switch } from '@/components/switch'
 import { cn } from '@/utils/cn'
 
 const meta: Meta<typeof Card> = {
@@ -40,19 +40,15 @@ export const Default: Story = {
   render: (args) => (
     <Card className={cn('w-[380px]', args.className)} {...args}>
       <CardHeader>
-        <CardTitle>Notifications</CardTitle>
-        <CardDescription>You have 3 unread messages.</CardDescription>
+        <CardTitle>通知</CardTitle>
+        <CardDescription>你有3条未读消息。</CardDescription>
       </CardHeader>
       <CardContent className='grid gap-4'>
         <div className=' flex items-center space-x-4 rounded-md border p-4'>
           <BellIcon />
           <div className='flex-1 space-y-1'>
-            <p className='text-sm font-medium leading-none'>
-              Push Notifications
-            </p>
-            <p className='text-sm text-muted-foreground'>
-              Send notifications to device.
-            </p>
+            <p className='text-sm font-medium leading-none'>推送通知</p>
+            <p className='text-sm text-muted-foreground'>推送通知到设备。</p>
           </div>
           <Switch />
         </div>
@@ -77,7 +73,7 @@ export const Default: Story = {
       </CardContent>
       <CardFooter>
         <Button className='w-full'>
-          <CheckIcon className='mr-2 size-4' /> Mark all as read
+          <CheckIcon className='mr-2 size-4' /> 全部标记为已读
         </Button>
       </CardFooter>
     </Card>

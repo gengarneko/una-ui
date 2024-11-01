@@ -18,19 +18,18 @@ const meta: Meta<typeof AlertDialog> = {
   render: (args) => (
     <AlertDialog {...args}>
       <AlertDialogTrigger asChild>
-        <Button variant='outline'>Show Dialog</Button>
+        <Button variant='outline'>打开</Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogTitle>你确定吗？</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            此操作无法撤消。这将永久删除您的帐户并从我们的服务器中删除您的数据。
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Continue</AlertDialogAction>
+          <AlertDialogCancel>取消</AlertDialogCancel>
+          <AlertDialogAction>继续</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

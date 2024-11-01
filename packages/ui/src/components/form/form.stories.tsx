@@ -7,8 +7,8 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 
-import { Button } from '@/primitives/button'
-import { Input } from '@/primitives/input'
+import { Button } from '@/components/button'
+import { Input } from '@/components/input'
 
 import {
   Form,

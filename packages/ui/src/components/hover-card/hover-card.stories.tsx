@@ -1,8 +1,8 @@
 import { CalendarIcon } from '@radix-ui/react-icons'
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/primitives/avatar'
-import { Button } from '@/primitives/button'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/avatar'
+import { Button } from '@/components/button'
 
 import { HoverCard, HoverCardContent, HoverCardTrigger } from '.'
 

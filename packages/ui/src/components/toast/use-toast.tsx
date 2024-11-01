@@ -16,8 +16,8 @@ type ToasterToast = ToastProps & {
 let count = 0
 
 /**
- * This function generates a unique id for a toast.
- * @returns  A unique id for a toast.
+ * 此函数生成一个唯一的 toast id。
+ * @returns 一个唯一的 toast id。
  */
 function genId() {
   count = (count + 1) % Number.MAX_SAFE_INTEGER
@@ -131,8 +131,8 @@ const listeners: ((state: State) => void)[] = []
 let memoryState: State = { toasts: [] }
 
 /**
- * Dispatches an action to the toast reducer and notifies all listeners.
- * @param action The action to dispatch.
+ * 将动作调度到 toast reducer 并通知所有监听器。
+ * @param action 要调度的动作。
  */
 function dispatch(action: Action) {
   memoryState = reducer(memoryState, action)
@@ -144,9 +144,9 @@ function dispatch(action: Action) {
 export type ToastArgs = Omit<ToasterToast, 'id'>
 
 /**
- * A function that creates and displays a toast.
- * @param args The props for the toast.
- * @returns An object with the id of the toast and functions to dismiss or update the toast.
+ * 一个函数，用于创建和显示 toast。
+ * @param args toast 的属性。
+ * @returns 一个包含 toast id 的对象，以及用于删除或更新 toast 的函数。
  */
 function toast({ ...props }: ToastArgs) {
   const id = genId()
@@ -183,8 +183,8 @@ function toast({ ...props }: ToastArgs) {
 }
 
 /**
- * A hook that provides the current state of the toasts and functions to create and dismiss toasts.
- * @returns The current state of the toasts, the toast function and a dismiss function.
+ * 一个钩子，提供当前 toast 的状态和创建和删除 toast 的函数。
+ * @returns 当前 toast 的状态、toast 函数和删除函数。
  */
 function useToast() {
   const [state, setState] = React.useState<State>(memoryState)

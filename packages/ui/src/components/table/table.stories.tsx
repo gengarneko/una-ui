@@ -60,13 +60,13 @@ const meta: Meta<typeof Table> = {
   component: Table,
   render: (args) => (
     <Table {...args}>
-      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableCaption>您的最近发票列表。</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className='w-[100px]'>Invoice</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className='text-right'>Amount</TableHead>
+          <TableHead className='w-[100px]'>发票</TableHead>
+          <TableHead>状态</TableHead>
+          <TableHead>方法</TableHead>
+          <TableHead className='text-right'>金额</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -81,7 +81,7 @@ const meta: Meta<typeof Table> = {
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
+          <TableCell colSpan={3}>总计</TableCell>
           <TableCell className='text-right'>$2,500.00</TableCell>
         </TableRow>
       </TableFooter>

@@ -6,7 +6,7 @@ import type { CarouselApi } from '.'
 import { type Meta, type StoryObj } from '@storybook/react'
 import AutoplayPlugin from 'embla-carousel-autoplay'
 
-import { Card, CardContent } from '@/primitives/card'
+import { Card, CardContent } from '@/components/card'
 
 import {
   Carousel,
@@ -174,7 +174,7 @@ const WithSlideNumberExample = (props: ComponentProps<typeof Carousel>) => {
         </Carousel>
       </div>
       <div className='py-2 text-center text-sm text-muted-foreground'>
-        Slide {current} of {count}
+        第 {current} 页，共 {count} 页
       </div>
     </div>
   )

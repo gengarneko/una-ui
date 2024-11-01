@@ -29,55 +29,55 @@ const meta: Meta<typeof DropdownMenu> = {
   render: (args) => (
     <DropdownMenu {...args}>
       <DropdownMenuTrigger asChild>
-        <Button variant='outline'>Open</Button>
+        <Button variant='outline'>打开</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56'>
-        <DropdownMenuLabel>My Account</DropdownMenuLabel>
+        <DropdownMenuLabel>我的账户</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem>
-            Profile
+            个人资料
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            Billing
+            账单
             <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            Settings
+            设置
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            Keyboard shortcuts
+            快捷键
             <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuItem>团队</DropdownMenuItem>
           <DropdownMenuSub>
-            <DropdownMenuSubTrigger>Invite users</DropdownMenuSubTrigger>
+            <DropdownMenuSubTrigger>邀请用户</DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
-                <DropdownMenuItem>Email</DropdownMenuItem>
-                <DropdownMenuItem>Message</DropdownMenuItem>
+                <DropdownMenuItem>电子邮件</DropdownMenuItem>
+                <DropdownMenuItem>消息</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>More...</DropdownMenuItem>
+                <DropdownMenuItem>更多...</DropdownMenuItem>
               </DropdownMenuSubContent>
             </DropdownMenuPortal>
           </DropdownMenuSub>
           <DropdownMenuItem>
-            New Team
+            新团队
             <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>GitHub</DropdownMenuItem>
-        <DropdownMenuItem>Support</DropdownMenuItem>
+        <DropdownMenuItem>支持</DropdownMenuItem>
         <DropdownMenuItem disabled>API</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          Log out
+          退出
           <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
         </DropdownMenuItem>
       </DropdownMenuContent>
@@ -101,29 +101,29 @@ const CheckboxesExample = (props: ComponentProps<typeof DropdownMenu>) => {
   return (
     <DropdownMenu {...props}>
       <DropdownMenuTrigger asChild>
-        <Button variant='outline'>Open</Button>
+        <Button variant='outline'>打开</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56'>
-        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+        <DropdownMenuLabel>外观</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuCheckboxItem
           checked={showStatusBar ?? false}
           onCheckedChange={setShowStatusBar}
         >
-          Status Bar
+          状态栏
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={showActivityBar ?? false}
           onCheckedChange={setShowActivityBar}
           disabled
         >
-          Activity Bar
+          活动栏
         </DropdownMenuCheckboxItem>
         <DropdownMenuCheckboxItem
           checked={showPanel ?? false}
           onCheckedChange={setShowPanel}
         >
-          Panel
+          面板
         </DropdownMenuCheckboxItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -140,15 +140,15 @@ const RadioGroupExample = (props: ComponentProps<typeof DropdownMenu>) => {
   return (
     <DropdownMenu {...props}>
       <DropdownMenuTrigger asChild>
-        <Button variant='outline'>Open</Button>
+        <Button variant='outline'>打开</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56'>
-        <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
+        <DropdownMenuLabel>面板位置</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
-          <DropdownMenuRadioItem value='top'>Top</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value='bottom'>Bottom</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value='right'>Right</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value='top'>顶部</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value='bottom'>底部</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value='right'>右侧</DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>

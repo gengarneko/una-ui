@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Separator } from '@/primitives/separator'
+import { Separator } from '@/components/separator'
 
 import { ScrollArea, ScrollBar } from '.'
 

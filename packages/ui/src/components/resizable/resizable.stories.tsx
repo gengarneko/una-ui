@@ -12,7 +12,7 @@ const meta: Meta<typeof ResizablePanelGroup> = {
     >
       <ResizablePanel defaultSize={50}>
         <div className='flex h-[200px] items-center justify-center p-6'>
-          <span className='font-semibold'>One</span>
+          <span className='font-semibold'>一</span>
         </div>
       </ResizablePanel>
       <ResizableHandle />
@@ -20,13 +20,13 @@ const meta: Meta<typeof ResizablePanelGroup> = {
         <ResizablePanelGroup direction='vertical'>
           <ResizablePanel defaultSize={25}>
             <div className='flex h-full items-center justify-center p-6'>
-              <span className='font-semibold'>Two</span>
+              <span className='font-semibold'>二</span>
             </div>
           </ResizablePanel>
           <ResizableHandle />
           <ResizablePanel defaultSize={75}>
             <div className='flex h-full items-center justify-center p-6'>
-              <span className='font-semibold'>Three</span>
+              <span className='font-semibold'>三</span>
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>

@@ -9,7 +9,7 @@ import * as CalendarStories from './calendar.stories'
 
 # Calendar
 
-A date field component that allows users to enter and edit date.
+一个允许用户输入和编辑日期的日期字段组件。
 
 ## Preview
 
@@ -32,20 +32,20 @@ export const usageCode = `const [date, setDate] = React.useState<Date | undefine
 <Source code={importCode} language='ts' dark />
 <Source code={usageCode} language='tsx' dark />
 
-See the [React DayPicker](https://react-day-picker.js.org/) documentation for more information.
+查看 [React DayPicker](https://react-day-picker.js.org/) 文档了解更多信息。
 
 ## Examples
 
-### Date Picker
+### 日期选择器
 
-You can use the `<Calendar>` component inside a `<Popover>` component to build a date picker.
+你可以将 `<Calendar>` 组件嵌套在 `<Popover>` 组件中，来构建一个日期选择器。
 
 <Canvas of={CalendarStories.DatePicker} />
 
-### Date Picker Range
+### 日期范围选择器
 
 <Canvas of={CalendarStories.DateRangePicker} />
 
-### With Presets
+### 预设日期
 
 <Canvas of={CalendarStories.WithPresets} />

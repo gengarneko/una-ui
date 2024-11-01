@@ -4,7 +4,7 @@ import type { ToastArgs } from './use-toast'
 
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Button } from '@/primitives/button'
+import { Button } from '@/components/button'
 
 import { ToastAction } from './toast'
 import { Toaster } from './toaster'
@@ -20,7 +20,7 @@ const ToastDemo: FC<ToastArgs> = (props) => {
         toast(props)
       }}
     >
-      Show Toast
+      显示 Toast
     </Button>
   )
 }
@@ -29,8 +29,8 @@ const meta: Meta<typeof ToastDemo> = {
   component: ToastDemo,
   args: {
     variant: 'default',
-    title: 'Scheduled: Catch up',
-    description: 'Friday, February 10, 2023 at 5:57 PM',
+    title: '已安排：赶上',
+    description: '2023年2月10日星期五下午5:57',
   },
   argTypes: {
     action: { control: { disable: true } },
@@ -56,30 +56,30 @@ export const Default: Story = {}
 export const Simple: Story = {
   args: {
     title: '',
-    description: 'Your message has been sent.',
+    description: '您的消息已发送。',
   },
 }
 
 export const WithTitle: Story = {
   args: {
-    title: 'Uh oh! Something went wrong.',
-    description: 'There was a problem with your request.',
+    title: '哎呀！出了点问题。',
+    description: '您的请求有问题。',
   },
 }
 
 export const WithAction: Story = {
   args: {
-    title: 'Uh oh! Something went wrong.',
-    description: 'There was a problem with your request.',
-    action: <ToastAction altText='Try again'>Try again</ToastAction>,
+    title: '哎呀！出了点问题。',
+    description: '您的请求有问题。',
+    action: <ToastAction altText='Try again'>再试一次</ToastAction>,
   },
 }
 
 export const Destructive: Story = {
   args: {
     variant: 'destructive',
-    title: 'Uh oh! Something went wrong.',
-    description: 'There was a problem with your request.',
-    action: <ToastAction altText='Try again'>Try again</ToastAction>,
+    title: '哎呀！出了点问题。',
+    description: '您的请求有问题。',
+    action: <ToastAction altText='Try again'>再试一次</ToastAction>,
   },
 }

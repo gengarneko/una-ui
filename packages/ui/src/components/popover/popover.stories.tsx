@@ -1,15 +1,15 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Button } from '@/primitives/button'
-import { Input } from '@/primitives/input'
-import { Label } from '@/primitives/label'
+import { Button } from '@/components/button'
+import { Input } from '@/components/input'
+import { Label } from '@/components/label'
 
 import { Popover, PopoverContent, PopoverTrigger } from '.'
 
 const meta: Meta<typeof PopoverContent> = {
   component: PopoverContent,
   args: {
-    children: 'Place content for the popover here.',
+    children: '放置弹出窗口的内容。',
   },
   argTypes: {
     asChild: {
@@ -19,7 +19,7 @@ const meta: Meta<typeof PopoverContent> = {
   render: (args) => (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant='outline'>Open</Button>
+        <Button variant='outline'>打开</Button>
       </PopoverTrigger>
       <PopoverContent {...args} />
     </Popover>
@@ -41,19 +41,17 @@ export const Example: Story = {
   render: (args) => (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant='outline'>Open popover</Button>
+        <Button variant='outline'>打开弹出窗口</Button>
       </PopoverTrigger>
       <PopoverContent className='w-80' {...args}>
         <div className='grid gap-4'>
           <div className='space-y-2'>
-            <h4 className='font-medium leading-none'>Dimensions</h4>
-            <p className='text-sm text-muted-foreground'>
-              Set the dimensions for the layer.
-            </p>
+            <h4 className='font-medium leading-none'>尺寸</h4>
+            <p className='text-sm text-muted-foreground'>设置层的尺寸。</p>
           </div>
           <div className='grid gap-2'>
             <div className='grid grid-cols-3 items-center gap-4'>
-              <Label htmlFor='width'>Width</Label>
+              <Label htmlFor='width'>宽度</Label>
               <Input
                 id='width'
                 defaultValue='100%'
@@ -61,7 +59,7 @@ export const Example: Story = {
               />
             </div>
             <div className='grid grid-cols-3 items-center gap-4'>
-              <Label htmlFor='maxWidth'>Max. width</Label>
+              <Label htmlFor='maxWidth'>最大宽度</Label>
               <Input
                 id='maxWidth'
                 defaultValue='300px'
@@ -69,7 +67,7 @@ export const Example: Story = {
               />
             </div>
             <div className='grid grid-cols-3 items-center gap-4'>
-              <Label htmlFor='height'>Height</Label>
+              <Label htmlFor='height'>高度</Label>
               <Input
                 id='height'
                 defaultValue='25px'
@@ -77,7 +75,7 @@ export const Example: Story = {
               />
             </div>
             <div className='grid grid-cols-3 items-center gap-4'>
-              <Label htmlFor='maxHeight'>Max. height</Label>
+              <Label htmlFor='maxHeight'>最大高度</Label>
               <Input
                 id='maxHeight'
                 defaultValue='none'

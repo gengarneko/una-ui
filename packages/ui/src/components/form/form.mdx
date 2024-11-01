@@ -9,33 +9,33 @@ import * as FormStories from './form.stories'
 
 # React Hook Form
 
-**Building forms with React Hook Form and Zod.**
+**使用 React Hook Form 和 Zod 构建表单。**
 
-Forms are tricky. They are one of the most common things you'll build in a web application, but also one of the most complex.
+表单是棘手的。它们是 web 应用中最常见的东西之一，但也是最复杂的。
 
-Well-designed HTML forms are:
+精心设计的 HTML 表单是：
 
-- Well-structured and semantically correct.
-- Easy to use and navigate (keyboard).
-- Accessible with ARIA attributes and proper labels.
-- Has support for client and server side validation.
-- Well-styled and consistent with the rest of the application.
+- 结构良好且语义正确。
+- 易于使用和导航 (键盘)。
+- 使用 ARIA 属性和支持键盘访问。
+- 支持客户端和服务器端验证。
+- 样式良好且与应用程序的其他部分一致。
 
-In this guide, we will take a look at building forms with [react-hook-form](https://react-hook-form.com/) and [zod](https://zod.dev/). We're going to use a `<FormField>` component to compose accessible forms using Radix UI components.
+在本指南中，我们将使用 [react-hook-form](https://react-hook-form.com/) 和 [zod](https://zod.dev/) 构建表单。我们将使用 `<FormField>` 组件来使用 Radix UI 组件组合可访问的表单。
 
 ## Features
 
-The `<Form />` component is a wrapper around the `react-hook-form` library. It provides a few things:
+`<Form />` 组件是 `react-hook-form` 库的包装器。它提供了以下功能：
 
-- Composable components for building forms.
-- A `<FormField />` component for building controlled form fields.
-- Form validation using `zod`.
-- Handles accessibility and error messages.
-- Uses `React.useId()` for generating unique IDs.
-- Applies the correct `aria` attributes to form fields based on states.
-- Built to work with all Radix UI components.
-- Bring your own schema library. We use `zod` but you can use anything you want.
-- **You have full control over the markup and styling.**
+- 用于构建表单的可组合组件。
+- 用于构建受控表单字段的 `<FormField />` 组件。
+- 使用 `zod` 进行表单验证。
+- 处理可访问性和错误消息。
+- 使用 `React.useId()` 生成唯一 ID。
+- 根据状态应用正确的 `aria` 属性。
+- 与所有 UI 组件一起工作。
+- 使用你自己的 schema 库。我们使用 `zod`，但你可以使用任何你想要的库。
+- **你完全控制标记和样式。**
 
 ## Anatomy
 
@@ -47,7 +47,7 @@ export const anatomyCode = `<Form>
       <FormItem>
         <FormLabel />
         <FormControl>
-          {/* Your form field */}
+          {/* 你的表单字段 */}
         </FormControl>
         <FormDescription />
         <FormMessage />
@@ -67,11 +67,11 @@ export const exampleCode = `const form = useForm()
   name='username'
   render={({ field }) => (
     <FormItem>
-      <FormLabel>Username</FormLabel>
+      <FormLabel>用户名</FormLabel>
       <FormControl>
-        <Input placeholder='shadcn' {...field} />
+        <Input placeholder='theo' {...field} />
       </FormControl>
-      <FormDescription>This is your public display name.</FormDescription>
+      <FormDescription>这是你的公共显示名称。</FormDescription>
       <FormMessage />
     </FormItem>
   )}

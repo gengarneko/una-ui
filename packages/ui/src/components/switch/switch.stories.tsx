@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 
-import { Label } from '@/primitives/label'
+import { Label } from '@/components/label'
 
 import { Switch } from '.'
 
@@ -19,7 +19,7 @@ export const Default: Story = {
   render: (args) => (
     <div className='flex items-center space-x-2'>
       <Switch {...args} />
-      <Label htmlFor='airplane-mode'>Airplane Mode</Label>
+      <Label htmlFor='airplane-mode'>飞行模式</Label>
     </div>
   ),
 }

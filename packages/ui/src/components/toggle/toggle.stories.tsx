@@ -6,7 +6,7 @@ import { Toggle } from '.'
 const meta: Meta<typeof Toggle> = {
   component: Toggle,
   args: {
-    'aria-label': 'Toggle bold',
+    'aria-label': '切换粗体',
     children: <FontBoldIcon className='size-4' />,
     size: 'default',
     variant: 'default',
@@ -36,7 +36,7 @@ export const WithText: Story = {
     children: (
       <>
         <FontItalicIcon className='mr-2 size-4' />
-        Italic
+        斜体
       </>
     ),
   },

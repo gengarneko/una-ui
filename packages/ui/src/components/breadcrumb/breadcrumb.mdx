@@ -6,7 +6,7 @@ import * as BreadcrumbStories from './breadcrumb.stories'
 
 # Breadcrumb
 
-Displays the path to the current resource using a hierarchy of links.
+展示当前资源的路径，使用链接层次结构。
 
 ## Preview
 
@@ -47,18 +47,18 @@ export const usageCode = `<Breadcrumb>
 
 ### Custom Separator
 
-Use a custom component as `children` for `<BreadcrumbSeparator />` to create a custom separator.
+使用自定义组件作为 `<BreadcrumbSeparator />` 的 `children` 来创建自定义分隔符。
 
 <Canvas of={BreadcrumbStories.CustomSeparator} />
 
 ### Dropdown
 
-You can compose `<BreadcrumbItem />` with a `<DropdownMenu />` to create a dropdown in the breadcrumb.
+你可以将 `<BreadcrumbItem />` 与 `<DropdownMenu />` 组合在一起，在面包屑中创建一个下拉菜单。
 
 <Canvas of={BreadcrumbStories.Dropdown} />
 
 ### Collapsed
 
-A `<BreadcrumbEllipsis />` component is provided to show a collapsed state when the breadcrumb is too long.
+提供了一个 `<BreadcrumbEllipsis />` 组件，当面包屑太长时显示折叠状态。
 
 <Canvas of={BreadcrumbStories.Collapsed} />
