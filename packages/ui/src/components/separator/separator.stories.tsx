@@ -27,6 +27,3 @@ export default meta
 type Story = StoryObj<typeof Separator>
 
 export const Default: Story = {}
-
-// Updated at Mon Jan 02 2023 15:13:37 GMT+0800 (China Standard Time)
-// Random change for feat(storybook)

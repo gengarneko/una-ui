@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const meow = require("meow");
-const fgh = require("./new");
-const path = require("path");
-const projectRoot = path.resolve(__dirname, '../../../packages/ui');  // 获取项目根目录
+const meow = require('meow')
+const fgh = require('./new')
+const path = require('path')
+const projectRoot = path.resolve(__dirname, '../../../packages/ui') // 获取项目根目录
 
 const cli = meow(
   `
@@ -24,32 +24,32 @@ const cli = meow(
   {
     flags: {
       startDate: {
-        type: "string",
-        alias: "s"
+        type: 'string',
+        alias: 's',
       },
       endDate: {
-        type: "string",
-        alias: "e"
+        type: 'string',
+        alias: 'e',
       },
       workdaysOnly: {
-        type: "boolean",
-        alias: "w",
-        default: "false"
+        type: 'boolean',
+        alias: 'w',
+        default: 'false',
       },
       commitsPerDay: {
-        type: "string",
-        alias: "c",
-        default: "0,3"
-      }
-    }
-  }
-);
+        type: 'string',
+        alias: 'c',
+        default: '0,3',
+      },
+    },
+  },
+)
 
 // fgh(cli.flags);
 fgh({
-  commitsPerDay: "1,5", // 每天1-5次提交
-  workdaysOnly: true,   // 仅工作日提交
-  startDate: "2023-01-01",
-  endDate: "2024-09-31",
-  repoPath: projectRoot // una-ui 仓库的实际路径
-});
+  commitsPerDay: '1,5', // 每天1-5次提交
+  workdaysOnly: true, // 仅工作日提交
+  startDate: '2023-01-01',
+  endDate: '2024-09-31',
+  repoPath: projectRoot, // una-ui 仓库的实际路径
+})

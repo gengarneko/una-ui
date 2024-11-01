@@ -126,6 +126,3 @@ const lightTheme = {
 }
 
 export default lightTheme
-
-// Updated at Mon Jan 02 2023 09:50:44 GMT+0800 (China Standard Time)
-// Random change for fix(bug)

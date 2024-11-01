@@ -66,6 +66,3 @@ export function PrimitiveDocsButton({
     </div>
   )
 }
-
-// Updated at Mon Jan 02 2023 13:02:02 GMT+0800 (China Standard Time)
-// Random change for fix(bug)
