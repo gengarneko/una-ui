@@ -2,9 +2,9 @@
   "name": "@una/assets",
   "version": "0.4.3",
   "private": true,
-  "description": "OrbitKit's assets package",
+  "description": "gengrneko's assets package",
   "license": "MIT",
-  "author": "OrbitKit",
+  "author": "gengrneko",
   "files": [
     "**/*"
   ],

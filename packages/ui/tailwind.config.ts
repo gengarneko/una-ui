@@ -1,11 +1,11 @@
 import type { Config } from 'tailwindcss'
 
-import { orbitKitTailwindPreset } from '@una/tailwind'
+import { gengrnekoTailwindPreset } from '@una/tailwind'
 
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
-  presets: [orbitKitTailwindPreset],
+  presets: [gengrnekoTailwindPreset],
 }
 
 export default config

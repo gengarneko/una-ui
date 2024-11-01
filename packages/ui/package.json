@@ -2,16 +2,16 @@
   "name": "@una/ui",
   "version": "0.4.3",
   "private": true,
-  "description": "OrbitKit UI Design System Components Library",
+  "description": "UI Design System Components Library",
   "license": "MIT",
-  "author": "OrbitKit",
+  "author": "gengrneko",
   "sideEffects": false,
   "type": "module",
   "exports": {
     "./*": {
-      "types": "./dist/primitives/*/index.d.ts",
-      "require": "./dist/primitives/*/index.cjs",
-      "default": "./dist/primitives/*/index.js"
+      "types": "./dist/components/*/index.d.ts",
+      "require": "./dist/components/*/index.cjs",
+      "default": "./dist/components/*/index.js"
     },
     "./cn": {
       "types": "./dist/utils/cn.d.ts",
