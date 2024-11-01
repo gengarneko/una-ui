@@ -16,6 +16,7 @@ const {
 const chalk = require("chalk");
 const ora = require("ora");
 const boxen = require("boxen");
+const fs = require('fs');
 
 // 定义提交类型和文件模板
 const COMMIT_TEMPLATES = [
@@ -69,7 +70,7 @@ const COMMIT_TEMPLATES = [
         'tooltip',
         'typography'
       ],
-      'src/utils/': ['helper', 'request', 'storage', 'validator'],
+      // 'src/utils/': ['helper', 'request', 'storage', 'validator'],
     },
     messages: [
       'add {name} component, finish {name} style & test',
@@ -87,9 +88,8 @@ const COMMIT_TEMPLATES = [
     type: 'fix',
     scopes: ['bug', 'style', 'types'],
     files: {
-      'src/styles/': ['theme', 'variables', 'mixins', 'reset'],
-      'src/types/': ['index', 'components', 'utils', 'store'],
-      'tests/': ['unit', 'e2e', 'integration']
+      'src/storybook-utils/': ['primitive-docs-button'],
+      'src/utils/': ['cn', 'globalStyles', 'themes', 'tokens']
     },
     messages: [
       'fix {name} bug, improve test coverage',
@@ -99,43 +99,111 @@ const COMMIT_TEMPLATES = [
   }
 ];
 
-async function createCommit(date, template, historyFolder) {
-  // 随机选择提交类型和范围
+async function createCommit(date, template, repoPath) {
   const type = template.type;
   const scope = template.scopes[Math.floor(Math.random() * template.scopes.length)];
 
-  // 随机选择文件路径和名称
+  // 随机选择要修改的文件夹
   const folders = Object.keys(template.files);
   const folder = folders[Math.floor(Math.random() * folders.length)];
   const fileNames = template.files[folder];
   const fileName = fileNames[Math.floor(Math.random() * fileNames.length)];
 
-  // 生成文件内容
-  const fileContent = `// ${fileName} - Created at ${date}\n` +
-    `// This is a sample file for ${type}(${scope})\n` +
-    `export const ${fileName} = {\n` +
-    `  name: '${fileName}',\n` +
-    `  created: '${date}'\n` +
-    `};\n`;
+  // 构建完整的文件夹路径
+  const folderPath = path.join(repoPath, folder, fileName);
 
-  // 确保目录存在
-  const fullPath = path.join(historyFolder, folder);
-  mkdirSync(fullPath, { recursive: true });
+  // 检查是否是文件夹
+  if (existsSync(folderPath) && fs.statSync(folderPath).isDirectory()) {
+    // 如果是文件夹，获取其中的所有 .ts/.tsx/.js/.jsx 文件
+    const files = fs.readdirSync(folderPath)
+      .filter(file => /\.(ts|tsx|js|jsx)$/.test(file))
+      .map(file => path.join(folderPath, file));
 
-  // 写入文件
-  const filePath = path.join(fullPath, `${fileName}.ts`);
-  writeFileSync(filePath, fileContent);
+  // 检查是否是文件夹并查找同名文件
+  if (existsSync(componentPath) && fs.statSync(componentPath).isDirectory()) {
+    // 尝试查找同名文件（支持多种扩展名）
+    const possibleFiles = [
+      path.join(componentPath, `${fileName}.tsx`),
+      path.join(componentPath, `${fileName}.ts`),
+      path.join(componentPath, `${fileName}.jsx`),
+      path.join(componentPath, `${fileName}.js`),
+      path.join(componentPath, `index.tsx`),
+      path.join(componentPath, `index.ts`),
+      path.join(componentPath, `index.jsx`),
+      path.join(componentPath, `index.js`)
+    ];
+
+    console.log('尝试查找以下文件:');  // 调试日志
+    possibleFiles.forEach(file => console.log(`- ${file}`));
+
+    const targetFile = possibleFiles.find(file => existsSync(file));
+
+    if (targetFile) {
+      console.log(`找到文件: ${targetFile}`);  // 调试日志
+
+      // 读取现有文件内容
+      const currentContent = fs.readFileSync(targetFile, 'utf-8');
+
+      // 添加一些随机的注释或小改动
+      const updatedContent = currentContent +
+        `\n// Updated at ${date}\n` +
+        `// Random change for ${type}(${scope})\n`;
+
+      // 写入修改后的内容
+      writeFileSync(targetFile, updatedContent);
+
+      // 执行 git 命令
+      await execAsync(`git add "${targetFile}"`);
+    } else {
+      // 如果文件夹中没有可修改的文件，创建一个新文件
+      const newFile = path.join(folderPath, 'index.ts');
+      const fileContent = `// ${fileName} - Created at ${date}\n` +
+        `// This is a sample file for ${type}(${scope})\n` +
+        `export const ${fileName} = {\n` +
+        `  name: '${fileName}',\n` +
+        `  created: '${date}'\n` +
+        `};\n`;
+
+      writeFileSync(newFile, fileContent);
+      await execAsync(`git add "${newFile}"`);
+    }
+  } else {
+    // 如果是文件，直接修改
+    const filePath = `${folderPath}.tsx`;
+    if (existsSync(filePath)) {
+      const currentContent = fs.readFileSync(filePath, 'utf-8');
+      const updatedContent = currentContent +
+        `\n// Updated at ${date}\n` +
+        `// Random change for ${type}(${scope})\n`;
+
+      writeFileSync(filePath, updatedContent);
+    } else {
+      // 如果文件不存在，创建新文件
+      const fileContent = `// ${fileName} - Created at ${date}\n` +
+        `// This is a sample file for ${type}(${scope})\n` +
+        `export const ${fileName} = {\n` +
+        `  name: '${fileName}',\n` +
+        `  created: '${date}'\n` +
+        `};\n`;
+
+      writeFileSync(filePath, fileContent);
+    }
+    await execAsync(`git add "${filePath}"`);
+  }
 
   // 生成提交信息
   const message = template.messages[Math.floor(Math.random() * template.messages.length)]
     .replace('{name}', fileName);
 
-  // 执行 git 命令
-  await execAsync(`git add "${filePath}"`);
+  // 执行 git commit 命令
   await execAsync(`git commit --quiet --date "${date}" -m "${type}(${scope}): ${message}"`);
 }
 
-module.exports = function({ commitsPerDay, workdaysOnly, startDate, endDate }) {
+module.exports = function({ commitsPerDay, workdaysOnly, startDate, endDate, repoPath }) {
+  if (!repoPath) {
+    throw new Error('需要提供 una-ui 仓库的路径');
+  }
+
   const commitDateList = createCommitDateList({
     workdaysOnly,
     commitsPerDay: commitsPerDay.split(","),
@@ -145,43 +213,83 @@ module.exports = function({ commitsPerDay, workdaysOnly, startDate, endDate }) {
 
   (async function() {
     const spinner = ora("正在生成 GitHub 活动记录\n").start();
-    const historyFolder = "my-history";
+    let currentBranch;
+    let simulateBranch;
 
-    // 删除已存在的历史文件夹
-    if (existsSync(`./${historyFolder}`)) {
-      await execAsync(
-        `${process.platform === "win32" ? "rmdir /s /q" : "rm -rf"} ${historyFolder}`
+    try {
+      // 检查仓库路径是否存在
+      if (!existsSync(repoPath)) {
+        throw new Error('仓库路径不存在！');
+      }
+
+      // 检查是否是 git 仓库
+      const isGitRepo = await execAsync('git rev-parse --git-dir', {
+        cwd: repoPath
+      }).catch(() => false);
+
+      if (!isGitRepo) {
+        throw new Error(`${repoPath} 不是一个有效的 git 仓库！`);
+      }
+
+      // 保存当前工作目录
+      const currentDir = process.cwd();
+
+      // 切换到仓库目录
+      process.chdir(repoPath);
+
+      // 保存当前分支名
+      currentBranch = (await execAsync('git rev-parse --abbrev-ref HEAD')).stdout.trim();
+
+      // 创建新的分支进行模拟提交
+      simulateBranch = `simulate-${Date.now()}`;
+      await execAsync(`git checkout -b ${simulateBranch}`);
+
+      // 创建提交
+      for (const date of commitDateList) {
+        const dateFormatted = new Intl.DateTimeFormat("zh-CN", {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        }).format(date);
+
+        spinner.text = `正在生成提交记录... (${dateFormatted})\n`;
+
+        const template = COMMIT_TEMPLATES[Math.floor(Math.random() * COMMIT_TEMPLATES.length)];
+        await createCommit(date, template, repoPath);
+      }
+
+      // 切换回原来的分支
+      await execAsync(`git checkout ${currentBranch}`);
+
+      // 恢复原来的工作目录
+      process.chdir(currentDir);
+
+      spinner.succeed();
+      console.log(
+        boxen(
+          `${chalk.green("成功")} 已在分支 ${simulateBranch} 上创建 ${commitDateList.length} 个提交记录。`,
+          { borderColor: "yellow", padding: 1, align: "center" }
+        )
       );
+
+    } catch (error) {
+      spinner.fail(`发生错误: ${error.message}`);
+
+      // 改进的清理过程
+      try {
+        if (existsSync(repoPath)) {
+          process.chdir(repoPath);
+          if (currentBranch) {
+            await execAsync(`git checkout ${currentBranch}`);
+          }
+          if (simulateBranch) {
+            await execAsync(`git branch -D ${simulateBranch}`);
+          }
+        }
+      } catch (cleanupError) {
+        console.error('清理过程中发生错误:', cleanupError.message);
+      }
     }
-
-    // 创建新的历史文件夹并初始化 git
-    await execAsync(`mkdir ${historyFolder}`);
-    process.chdir(historyFolder);
-    await execAsync(`git init`);
-
-    // 创建提交
-    for (const date of commitDateList) {
-      const dateFormatted = new Intl.DateTimeFormat("zh-CN", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      }).format(date);
-
-      spinner.text = `正在生成提交记录... (${dateFormatted})\n`;
-
-      // 随机选择提交模板
-      const template = COMMIT_TEMPLATES[Math.floor(Math.random() * COMMIT_TEMPLATES.length)];
-      await createCommit(date, template, historyFolder);
-    }
-
-    spinner.succeed();
-
-    console.log(
-      boxen(
-        `${chalk.green("成功")} 已创建 ${commitDateList.length} 个提交记录。`,
-        { borderColor: "yellow", padding: 1, align: "center" }
-      )
-    );
   })();
 };
 

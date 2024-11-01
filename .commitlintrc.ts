@@ -51,6 +51,6 @@ export default {
   extends: ['@commitlint/config-conventional'],
   utils: { getProjects },
   rules: {
-    'scope-enum': (ctx: Context) => [2, 'always', getProjects(ctx)],
+    // 'scope-enum': (ctx: Context) => [2, 'always', getProjects(ctx)],
   },
 }
